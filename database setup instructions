@@ -1,0 +1,26 @@
+# Start apache
+# In terminal, type the following:
+service apache2 start
+
+
+################################
+######------ MYSQL -------###### 
+################################
+
+
+
+mysql:
+
+CREATE DATABASE introsecdb;
+
+# Test to make sure everything is working
+SELECT * FROM users;
+
+# Result should look like this without the hash symbol:
+#
+# 1 lars 	eriksson 	racket correcthorsebatterystaple
+# 2 bella 	boman 		bboman h3ll0w0rld
+
+
+
+

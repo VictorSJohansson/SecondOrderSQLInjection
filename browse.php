@@ -16,12 +16,14 @@ session_start();
 <input type = "text" name = "search"> <input type = "submit" value="search">
 </form>
 </center>
-<?php echo "Välkommen " . $_SESSION['name']; } else{ ?>
+<?php echo "Välkommen " . $_SESSION['firstname'] . $_SESSION['lastname']; } else{ ?>
             <p>
                 <span class="error">You are not authorized to view this page</span> Please <a href="login.php">login.</a>.
             </p>
   <?php } ?>
+  <a href="activate.php">activate your account!</a>
   <a href="logout.php">log out</a>
+
         
 </body>
 </html>

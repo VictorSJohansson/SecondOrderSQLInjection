@@ -1,12 +1,10 @@
 <?php
 session_start();
-if (isset($_SESSION['login_user'])){
-    header('Location: ./browse.php');  
-   }
 ?>
+
 <html>
    <head>
-      <title>Login Page</title>
+      <title>Admin Login Page</title>
       
       <style type = "text/css">
          body {
@@ -35,18 +33,19 @@ if (isset($_SESSION['login_user'])){
         
             <div style = "margin:30px">
                
-               <form action = "process_login.php" method = "post">
-                  <label>UserName  :</label><input type = "text" name = "username" class = "box"/><br /><br />
+               <form action = "process_adminlogin.php" method = "post">
+                  <label>Username  :</label><input type = "text" name = "username" class = "box"/><br /><br />
                   <label>Password  :</label><input type = "password" name = "password" class = "box" /><br/><br />
                   <input type = "submit" value = " Submit "/><br />
                </form>
+               <a href= "login.php">regular user login</a>
                <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
           
             </div>
         
          </div>
       Not a member yet? <a href="join.php">sign up!</a>
-      <a href= "adminlogin.php">admin login</a>
+      <a href= "login.php">regular user login</a>
       </div>
 
    </body>

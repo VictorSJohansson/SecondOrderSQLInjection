@@ -1,15 +1,14 @@
 <?php 
-
-$username=$_POST['username'];
-$password=$_POST['password'];
-$firstname=$_POST['firstname'];
-$lastname=$_POST['lastname'];
-
-
 $conn = new mysqli(localhost, root, root, introsecdb);
+
+$lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
+$firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
+$username = mysqli_real_escape_string($conn, $_POST['username']);
+$password = mysqli_real_escape_string($conn, $_POST['password']);
+
 $name = mysqli_escape_string($firstname);
 $sql = "INSERT INTO users (username, password, firstname, lastname)
-VALUES ('$username', '$password', '$name', '$lastname')";
+VALUES ('$username', '$password', '$firstname', '$lastname')";
 
 if ($conn->query($sql) === TRUE) {
    

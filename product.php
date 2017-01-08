@@ -4,7 +4,7 @@ session_start();
 $mysqli= new mysqli("localhost", "root", "root", "introsecdb");
 $name= $_GET['name'];
 
-$query = "SELECT name FROM producs WHERE id = $name";
+$query = "SELECT name FROM products WHERE id = $name";
 
 $result = $mysqli->query($query);
 $num = $result->num_rows;

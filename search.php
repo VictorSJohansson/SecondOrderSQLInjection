@@ -8,19 +8,12 @@ $query = "SELECT * FROM products WHERE name = '$search'";
 
 $result = $mysqli->query($query);
 $num = $result->num_rows;
-//$num = $result->num_rows;
-//while ($row=mysqli_fetch_row($result))
-$i = 1;
-while ($row=mysqli_fetch_row($result)){
-			$productname += $row[0];
-		$i++;
+$array = array();
+$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+foreach( $rows as $row ):
+	$array[] = $row['name'];
+endforeach;
 
-}
-/*while($row = $result->fetch_array(MYSQL_BOTH)){
-		$productname = $row[$i];
-		$i++;
-}*/
-$results = var_dump($result);
 $result->free();
 $mysqli->close();
 ?>
@@ -32,7 +25,7 @@ $mysqli->close();
 <center>
 <h1>hAcme Shop</h1>
 <h2>Search</h2><br>
-<p>Found the following products: <?php echo $productname; ?>! Better buy them now! </p>
+<p>Found the following products: <?php foreach ($array as $item) {echo $item ?> <br> <?php ;}// echo $display; ?>! Better buy them now! </p>
 </center>
 <?php echo "Logged in as: " . $_SESSION['name']; } else{ ?>
             <p>

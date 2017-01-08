@@ -17,7 +17,7 @@ if (isset($_SESSION['login_user'])){
 
         <ul>
                 
-            <li>Ditt lösenord och bekräftelselösen måste vara identiska.</li>
+            <li>Fill out the form below to sign up </li>
         </ul>
         <form action="register.php" 
                 method="post" 
@@ -35,6 +35,6 @@ if (isset($_SESSION['login_user'])){
             <input type="submit" 
                    value="Register"/> 
         </form>
-        <p>Gå tillbaka till <a href="index.php">inloggningssidan</a>.</p>
+        <p>Or <a href="login.php">log in</a>.</p>
     </body>
 </html>
